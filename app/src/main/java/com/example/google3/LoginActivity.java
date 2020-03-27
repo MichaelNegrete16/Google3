@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
@@ -18,6 +20,8 @@ import com.google.android.gms.common.api.GoogleApiClient;
 public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
     private GoogleApiClient googleApiClient;
     private SignInButton signInButton;
+    public Button reg;
+    public ImageView Salir;
     public static final int SIGN_IN_CODE = 777;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +45,25 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
                 startActivityForResult(intent,SIGN_IN_CODE);
             }
         });
+
+
+
+
+        reg=(Button) findViewById(R.id.registrarse);
+        reg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(getApplicationContext(), Registrarse.class);
+                startActivity(i);
+            }
+        });
+
+
+
+
+
+
+
 
     }
 

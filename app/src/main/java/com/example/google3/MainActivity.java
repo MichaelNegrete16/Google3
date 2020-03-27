@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,10 +28,20 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.O
     private TextView nameTextView;
     private TextView emailTextView;
     private GoogleApiClient googleApiClient;
+    public Button avanzar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        avanzar = (Button) findViewById(R.id.control);
+        avanzar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent p = new Intent(getApplicationContext(), menuapp.class);
+                startActivity(p);
+            }
+        });
 
         photoImageView = (ImageView) findViewById(R.id.photoImageView);
         nameTextView = (TextView) findViewById(R.id.nameTextView);
