@@ -25,35 +25,24 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
     private GoogleApiClient googleApiClient;
     private SignInButton signInButton;
     public Button reg;
-    private EditText mEditTextEmail;
-    private EditText mEditTextPassword;
-    private Button mButtonLogin;
-    private String email="";
-    private String password="";
-    private FirebaseAuth mAuth;
+    private Button Go;
+
     public static final int SIGN_IN_CODE = 777;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        mAuth=FirebaseAuth.getInstance();
-        mEditTextEmail = (EditText) findViewById(R.id.editTextEmail);
-        mEditTextPassword = (EditText) findViewById(R.id.editTextPassword);
-        mButtonLogin = (Button) findViewById(R.id.button);
-
-        mButtonLogin.setOnClickListener(new View.OnClickListener() {
+        Go = (Button) findViewById(R.id.button);
+        Go.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                email=mEditTextEmail.getText().toString();
-                password=mEditTextEmail.getText().toString();
-                if(!email.isEmpty() && !password.isEmpty()){
-                    loginUser();
-                }else{
-                    Toast.makeText(LoginActivity.this, "Complete los campos", Toast.LENGTH_SHORT).show();
-                }
+                Intent p = new Intent(getApplicationContext(),LoginActivity2.class);
+                startActivity(p);
             }
         });
+
+
 
         GoogleSignInOptions gso= new  GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
@@ -123,16 +112,5 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         startActivity(intent);
     }
 
-    private void loginUser(){
-        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()){
-                    startActivity(new Intent(LoginActivity.this,Rgistrofisico.class));
-                }else {
-                    Toast.makeText(LoginActivity.this, "No se pudo iniciar sesion", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-    }
+
 }

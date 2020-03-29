@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondocuatro"
+    android:background="@drawable/minimalista2"
     tools:context="com.example.google3.Rgistrofisico">
 
     <LinearLayout

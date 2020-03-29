@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo"
+    android:background="@drawable/minimalista2"
     tools:context="com.example.google3.menuapp">
 
     <ImageView
@@ -38,9 +38,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginBottom="10dp"
-        android:background="@drawable/botonselect"
+
         android:text="presion arterial"
-        android:textColor="#ffffff"
+        android:textColorHint="#000000"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,9 +51,9 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
-        android:background="@drawable/botonselect"
+
         android:text="frecuencia cardiaca"
-        android:textColor="#ffffff"
+        android:textColorHint="#000000"
         app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -64,9 +64,9 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:background="@drawable/botonselect"
+
         android:text="glucemia"
-        android:textColor="#ffffff"
+        android:textColorHint="#000000"
         app:layout_constraintBottom_toTopOf="@+id/button4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -77,9 +77,9 @@
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="59dp"
-        android:background="@drawable/botonselect"
+
         android:text="Temperatura corpora"
-        android:textColor="#ffffff"
+        android:textColorHint="#000000"
         app:layout_constraintBottom_toTopOf="@+id/atras"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -90,9 +90,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="59dp"
-        android:background="@drawable/botonselect"
+
         android:text="atrás"
-        android:textColor="#ffffff"
+        android:textColorHint="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
