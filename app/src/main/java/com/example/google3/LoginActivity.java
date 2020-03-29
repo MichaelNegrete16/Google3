@@ -7,7 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
@@ -16,17 +16,44 @@ import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActivity extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
     private GoogleApiClient googleApiClient;
     private SignInButton signInButton;
     public Button reg;
-    public ImageView Salir;
+    private EditText mEditTextEmail;
+    private EditText mEditTextPassword;
+    private Button mButtonLogin;
+    private String email="";
+    private String password="";
+    private FirebaseAuth mAuth;
     public static final int SIGN_IN_CODE = 777;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        mAuth=FirebaseAuth.getInstance();
+        mEditTextEmail = (EditText) findViewById(R.id.editTextEmail);
+        mEditTextPassword = (EditText) findViewById(R.id.editTextPassword);
+        mButtonLogin = (Button) findViewById(R.id.button);
+
+        mButtonLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                email=mEditTextEmail.getText().toString();
+                password=mEditTextEmail.getText().toString();
+                if(!email.isEmpty() && !password.isEmpty()){
+                    loginUser();
+                }else{
+                    Toast.makeText(LoginActivity.this, "Complete los campos", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
 
         GoogleSignInOptions gso= new  GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
@@ -94,5 +121,18 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
         Intent intent = new Intent(this,MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
+    }
+
+    private void loginUser(){
+        mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (task.isSuccessful()){
+                    startActivity(new Intent(LoginActivity.this,Rgistrofisico.class));
+                }else {
+                    Toast.makeText(LoginActivity.this, "No se pudo iniciar sesion", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 }

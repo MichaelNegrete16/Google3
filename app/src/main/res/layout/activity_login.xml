@@ -36,7 +36,7 @@
         app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <EditText
-        android:id="@+id/edtPass"
+        android:id="@+id/editTextPassword"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_gravity="center"
@@ -53,10 +53,10 @@
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtUser" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextEmail" />
 
     <EditText
-        android:id="@+id/edtUser"
+        android:id="@+id/editTextEmail"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_gravity="center"
@@ -70,7 +70,7 @@
         android:hint="Usuario"
         android:textColor="#fff"
         android:textColorHint="#ffffff"
-        app:layout_constraintBottom_toTopOf="@+id/edtPass"
+        app:layout_constraintBottom_toTopOf="@+id/editTextPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/idLogo" />
@@ -81,7 +81,7 @@
         android:layout_height="129dp"
         android:layout_gravity="center"
         android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/edtUser"
+        app:layout_constraintBottom_toTopOf="@+id/editTextEmail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout"
@@ -111,6 +111,6 @@
         app:layout_constraintBottom_toTopOf="@+id/registrarse"
         app:layout_constraintEnd_toEndOf="@+id/registrarse"
         app:layout_constraintStart_toStartOf="@+id/registrarse"
-        app:layout_constraintTop_toBottomOf="@+id/edtPass" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
