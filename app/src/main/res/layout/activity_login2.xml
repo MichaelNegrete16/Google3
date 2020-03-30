@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/minimalista2"
+    android:background="@drawable/mini"
     tools:context="com.example.google3.LoginActivity2">
 
     <LinearLayout
@@ -19,7 +19,7 @@
             android:id="@+id/editTextEmail2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="200dp"
             android:hint="Email"
             ></EditText>
 

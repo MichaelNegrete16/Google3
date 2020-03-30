@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/minimalista2"
+    android:background="@drawable/mini"
     tools:context="com.example.google3.LoginActivity">
 
     <LinearLayout
@@ -14,21 +14,16 @@
         android:orientation="vertical"
         tools:layout_editor_absoluteY="40dp">
 
-        <ImageView
-            android:id="@+id/idLogo"
-            android:layout_width="200dp"
-            android:layout_height="129dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            app:srcCompat="@drawable/logoapp" />
+
 
         <Button
             android:id="@+id/button"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
+
             android:layout_gravity="center"
 
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="250dp"
             android:text="Ya tengo cuenta" />
 
         <Button

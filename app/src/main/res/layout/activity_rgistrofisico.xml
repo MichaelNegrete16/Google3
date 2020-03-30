@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/minimalista2"
+    android:background="@drawable/mini"
     tools:context="com.example.google3.Rgistrofisico">
 
     <LinearLayout
@@ -13,23 +13,13 @@
         android:orientation="vertical"
         tools:ignore="MissingConstraints">
 
-        <ImageView
-            android:id="@+id/idLogo"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="50dp"
-            app:layout_constraintBottom_toTopOf="@+id/login"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/logoapp" />
+
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="200dp"
             android:text="Registro fisico"
             android:textColor="#000000"
             android:textSize="25sp" />
@@ -89,9 +79,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:background="@drawable/botonselect"
+
             android:text="No"
-            android:textColor="#ffffff" />
+            android:textColor="#000000" />
 
         <Button
             android:id="@+id/Si"
@@ -99,9 +89,9 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="7dp"
-            android:background="@drawable/botonselect"
+
             android:text="Si Acepto"
-            android:textColor="#ffffff" />
+            android:textColor="#000000" />
 
     </LinearLayout>
 
